@@ -22,8 +22,13 @@
    * @param {*} inventors 
    */
   function addDiscoveries(inventor, discoveries, inventors){
-      
-  }
+    return inventors
+    .filter(_inventor => _inventor.last.toLowerCase() === inventor.toLowerCase())
+    .map(
+      inventor => ({...inventor, discoveries: discoveries})
+    );
+}
+
 
   console.log(addDiscoveries('Einstein', 
   ['Teoría de la relatividad especial','Equivalencia entre masa y energía','Teoría de la relatividad general'], inventors

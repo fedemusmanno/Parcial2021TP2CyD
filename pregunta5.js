@@ -8,8 +8,7 @@
  * Ademas se requiere que el nombre del archivo sea reemplazado por el nombre de la cerveza por ejemplo para Darkness sera:
  * https://tecnoshare.sharepoint.com/sites/beer/lnxbIV/darkness.png
  * 
- 
- /*
+  /*
   Beers
 */
 const beers = [
@@ -20,3 +19,14 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+function setlabel(beers){
+   return beers       
+            .map(
+              beer => ({...beer, label: beer.label.replace("s3.amazonaws.com/brewerydbapi","tecnoshare.sharepoint.com/sites")})
+              )
+            //  .map(
+            //     beer => ({...beer, label: beer.label.split("/")[5]}))
+
+            }
+
+console.log(setlabel(beers))
